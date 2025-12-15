@@ -16,7 +16,6 @@ your posts. Whether you want to display a gallery of images, or format a
 professional-looking reference section, these custom shortcodes have got you
 covered.
 
-<!-- more -->
 
 ## Alert Shortcode
 

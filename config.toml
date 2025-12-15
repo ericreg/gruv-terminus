@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://eyalkalderon.com/terminus"
+base_url = "https://ericregina.com"
 
 # The site title and description; used in feeds by default.
 title = "Terminus"
@@ -12,7 +12,7 @@ compile_sass = true
 generate_feeds = true
 
 # The default author for pages
-author = "Eyal Kalderon"
+author = "Eric Regina"
 
 # The taxonomies to be rendered for the site and their configuration of the default languages
 # Example:
@@ -38,7 +38,7 @@ highlight_code = true
 
 # The theme to use for code highlighting.
 # See below for list of allowed values.
-highlight_theme = "monokai"
+highlight_theme = "gruvbox-dark"
 
 # When set to "true", emoji aliases translated to their corresponding
 # Unicode emoji equivalent in the rendered Markdown files. (e.g.: :smile: => 😄)

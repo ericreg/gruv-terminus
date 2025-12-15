@@ -12,11 +12,18 @@ $max-layout-width: 864px;
 
 // Default theme (terminus)
 :root,
-[data-theme="terminus"] {
-    --background-color: #211f1a;
-    --text-color: whitesmoke;
-    --accent-color: rgb(255, 168, 106);
-    --footnote-color: rgba(255, 255, 255, 0.5);
+[data-theme="gruvbox-dark"] {
+    --background-color: #1d2021;
+    --text-color: #ebdbb2;
+    --accent-color: #d65d0e;
+    --red-color: #cc241d;
+    --yellow-color: #b57614;
+    --blue-color: #076678;
+    --green-color: #98971a;
+    --dark-green-color: #79740e;
+    --tags-color: #98971a;
+    --secondary-color: #98971a;
+    --footnote-color: rgba(235, 219, 178, 0.6);
 }
 
 // Tokyo Night theme
@@ -178,6 +185,7 @@ a {
     outline: none;
 
     &.read-more {
+        color: var(--red-color);
         text-decoration: none;
     }
 }

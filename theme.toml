@@ -1,19 +1,19 @@
 name = "terminus"
-description = "A dark duotone retro theme for Zola"
+description = "A dark gruvbox like theme based on Terminus"
 tags = ["dark", "blog", "minimal", "personal", "responsive", "seo"]
 license = "MIT"
-homepage = "https://github.com/ebkalderon/terminus"
+homepage = "https://github.com/ericreg/gruv-terminus"
 min_version = "0.20.0"
-demo = "https://ebkalderon.github.io/terminus/"
+demo = "https://ericregina.com"
 
 [author]
-name = "Eyal Kalderon"
-homepage = "https://eyalkalderon.com"
+name = "Eric Regina"
+homepage = "https://ericregina.com"
 
 [original]
-author =  "panr"
-homepage = "https://radekkoziel.pl"
-repo = "https://github.com/panr/hugo-theme-terminal"
+name = "Eyal Kalderon"
+homepage = "https://eyalkalderon.com"
+repo = "https://github.com/ebkalderon/terminus"
 
 [extra]
 # Automatically close responsive hamburger menu on window resize (requires JS).
@@ -30,10 +30,10 @@ copy_button = true
 # Strings delimited by `::` will be split into mobile-responsive HTML spans. If
 # present, the placeholder values `$YEAR` and `$AUTHOR` are templated with the
 # current year and the site author defined in your `config.toml`, respectively.
-copyright = "© $YEAR $AUTHOR :: Powered by [Zola](https://www.getzola.org) :: Theme by [ebkalderon](https://eyalkalderon.com)"
+copyright = "© $YEAR $AUTHOR"
 
 # favicon = "images/favicon.png"
-# favicon_emoji = "👨‍💻"
+favicon_emoji = "🕊️"
 
 # Enable Mastodon link attribution. See here for details:
 # https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/
@@ -66,7 +66,3 @@ allowed_domains = []
 [extra.responsive_images]
 widths = [640, 784, 1280, 1920, 2560]
 fallback_width = 1280
-
-[extra.theme_switcher]
-enable = false
-default = "terminus"

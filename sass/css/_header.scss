@@ -14,24 +14,44 @@
     flex: 1;
 }
 
+
 .header-logo-container {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 
-    &::after {
-        content: '';
-        display: block;
-        margin-inline-start: 8px;
-        width: 100%;
-        background: repeating-linear-gradient(90deg, var(--accent-color), var(--accent-color) 2px, transparent 0, transparent 10px);
-    }
+  &::after {
+    content: "";
+    display: block;
+    margin-inline-start: 8px;
+    width: 100%;
+    align-self: stretch;
 
-    a {
-        flex: 0 0 auto;
-        max-width: 100%;
-        text-decoration: none;
-    }
+    /* the gradient that will show through the stripes */
+    background: linear-gradient(90deg, var(--accent-color), var(--red-color));
+
+    /* stripes act as a mask: visible for 1px, hidden for the rest */
+    -webkit-mask-image: repeating-linear-gradient(
+      90deg,
+      #000 0 2px,
+      transparent 2px 10px
+    );
+            mask-image: repeating-linear-gradient(
+      90deg,
+      #000 0 2px,
+      transparent 2px 10px
+    );
+
+    -webkit-mask-repeat: repeat;
+            mask-repeat: repeat;
+  }
+
+  a {
+    flex: 0 0 auto;
+    max-width: 100%;
+    text-decoration: none;
+  }
 }
+
 
 .logo {
     display: flex;
