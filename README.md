@@ -1,43 +1,20 @@
-# Terminus
+# gruv-terminus
 
-An accessible [Zola](https://github.com/getzola/zola) theme with a dark color
-scheme and retro computer terminal-like vibe, multi-language support, zero
-required JavaScript, pretty font ligatures, and a perfect baseline Lighthouse
-score.
+A minimal dark theme for the [Zola](https://www.getzola.org/) static site generator. This theme was 
+inspired by these sources:
 
-**Try the demo now:** https://ebkalderon.github.io/terminus/
+* [ebkalderon/terminus](https://github.com/ebkalderon/terminus)
+* [morhetz/gruvbox](https://github.com/morhetz/gruvbox)
 
-![Screenshot of the Terminus demo website on a desktop browser](https://github.com/user-attachments/assets/ae7c378b-2987-4dbd-a84e-7d272e8856bc)
 
-Terminus is largely a port of Radek Kozieł's [Terminal Theme for
-Hugo](https://github.com/panr/hugo-theme-terminal) but with several key
-differences. Credit to the [zerm](https://github.com/ejmg/zerm) and
-[tabi](https://github.com/welpo/tabi) themes for inspiring some of these
-changes.
+Unlike, the original, theme colors are fixed to my specific preferences.
+I would recommend forking the original theme and customizing it to your
+liking if you want more flexibility.
 
-* Better accessibility (WCAG 2.2 Level AA minimum target)
-* Mobile-first design with improved responsiveness
-* Social media icons in footer
-* Support for [GitHub-style alerts]
-* SEO friendly (better OpenGraph support, will add Schema.org eventually)
-* No post image previews for a cleaner look
 
-[GitHub-style alerts]: https://ebkalderon.github.io/terminus/blog/shortcodes/#alert-shortcode
+**Try the demo now:** https://ericregina.com
 
-## Features
-
-- [x] Perfect baseline Lighthouse score (Performance, Accessibility, Best Practices and SEO).
-- [x] [Social media icons in footer](./theme.toml#L57-L60)
-- [x] [Custom shortcodes](https://ebkalderon.github.io/terminus/blog/shortcodes/)
-- [x] Copy button on code blocks
-- [ ] [Comprehensive documentation] (still working on it!)
-- [ ] Searchable archive page
-- [ ] Projects portfolio page
-- [ ] Site navigation submenus
-- [x] Customizable [color schemes](./sass/colors/)
-- [ ] [KaTeX](https://katex.org/) support for mathematical notation
-
-[Comprehensive documentation]: https://ebkalderon.github.io/terminus/
+![Screenshot of the Terminus demo website on a desktop browser](screenshot.png)
 
 ## Getting Started
 
@@ -82,12 +59,12 @@ changes.
 
 [Zola project directory]: https://www.getzola.org/documentation/getting-started/cli-usage/#init
 
-### Updating Terminus
+### Updating gruv-terminus
 
-To update the Terminus theme as a Git submodule, run:
+To update the gruv-terminus theme as a Git submodule, run:
 
 ```bash
-git submodule update --remote themes/terminus
+git submodule update --remote themes/gruv-terminus
 ```
 
 ## License
