@@ -2,8 +2,8 @@
 base_url = "https://ericregina.com"
 
 # The site title and description; used in feeds by default.
-title = "Terminus"
-description = "Demo website for the Terminus theme for Zola"
+title = "Gruv Terminus"
+description = "Demo website for the Gruv Terminus theme for Zola"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -54,7 +54,7 @@ github_alerts = true
 close_responsive_menu_on_resize = true
 copy_button = true
 favicon_emoji = "👨‍💻"
-fediverse_creator = "@ebkalderon@hachyderm.io"
+katex = true
 layout = "center"
 show_default_author = false
 
@@ -63,15 +63,13 @@ main_menu = [
     { name = "archive", url = "archive", trailing_slash = true },
     { name = "tags", url = "tags", trailing_slash = true },
     { name = "projects", url = "projects", trailing_slash = true },
-    { name = "github", url = "https://github.com/ebkalderon/terminus", new_tab = true },
+    { name = "github", url = "https://github.com/ericreg/gruv-terminus", new_tab = true },
 ]
 
 socials = [
     { name = "email", url = "mailto:hello@example.com" },
-    { name = "github", url = "https://github.com/ebkalderon" },
-    { name = "linkedin", url = "https://www.linkedin.com/in/ebkalderon" },
-    { name = "mastodon", url = "https://hachyderm.io/@ebkalderon" },
-    { name = "keyoxide", url = "https://keyoxide.org/d5ad5bd47835b0f0b0c3046c00ab4c0942dcba25" },
+    { name = "github", url = "https://github.com/ericreg" },
+    { name = "linkedin", url = "https://www.linkedin.com/in/ericregina" },
 ]
 
 [extra.content_security_policy]

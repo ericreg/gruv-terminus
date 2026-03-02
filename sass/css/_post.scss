@@ -57,24 +57,44 @@
 
 .post-title {
     position: relative;
-    margin-block: 0 15px;
-    padding-bottom: 15px;
-    border-bottom: 3px dotted var(--secondary-color);
-    color: var(--accent-color);
 
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: 2px;
-        display: block;
-        width: 100%;
-        border-bottom: 3px dotted var(--tags-color);
-    }
+    padding-bottom: 20px;
+    /* room for the pattern */
+    margin-block: 0 15px;
+    color: var(--accent-color);
 
     a {
         text-decoration: none;
     }
 }
+
+.post-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* now it’s bottom of the title, not the page */
+    height: 20px;
+
+    background: linear-gradient(90deg, var(--light-green-color), var(--dark-green-color));
+
+    --dot: 3px;
+    --gap: 6px;
+    --row-gap: 5px;
+
+    -webkit-mask:
+        repeating-linear-gradient(90deg, #000 0 var(--dot), transparent 0 var(--gap)) 0 calc(50% - var(--row-gap)/2) / 100% var(--dot) no-repeat,
+        repeating-linear-gradient(90deg, #000 0 var(--dot), transparent 0 var(--gap)) 0 calc(50% + var(--row-gap)/2) / 100% var(--dot) no-repeat;
+
+    mask:
+        repeating-linear-gradient(90deg, #000 0 var(--dot), transparent 0 var(--gap)) 0 calc(50% - var(--row-gap)/2) / 100% var(--dot) no-repeat,
+        repeating-linear-gradient(90deg, #000 0 var(--dot), transparent 0 var(--gap)) 0 calc(50% + var(--row-gap)/2) / 100% var(--dot) no-repeat;
+
+    pointer-events: none;
+}
+
+
 
 
 ul.post-meta {

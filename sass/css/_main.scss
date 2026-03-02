@@ -13,17 +13,19 @@ $max-layout-width: 864px;
 // Default theme (terminus)
 :root,
 [data-theme="gruvbox-dark"] {
-    --background-color: #1d2021;
-    --text-color: #ebdbb2;
     --accent-color: #d65d0e;
-    --red-color: #cc241d;
-    --yellow-color: #b57614;
+    --background-color: #1d2021;
     --blue-color: #076678;
-    --green-color: #98971a;
     --dark-green-color: #79740e;
-    --tags-color: #98971a;
-    --secondary-color: #98971a;
     --footnote-color: rgba(235, 219, 178, 0.6);
+    --green-color: #98971a;
+    --light-green-color: #b8bb26;
+    --red-color: #cc241d;
+    --secondary-color: #98971a;
+    --tags-color: #98971a;
+    --text-color: #ebdbb2;
+    --light-yellow-color: #fabd2f;
+    --yellow-color: #b57614;
 }
 
 // Tokyo Night theme
