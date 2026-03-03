@@ -1,0 +1,73 @@
+/*
+ * Custom giscus theme matching Gruv Terminus / Gruvbox Dark color scheme.
+ * Background: #1d2021, Text: #ebdbb2, Accent: #d65d0e
+ */
+
+:root {
+    --color-prettylights-syntax-comment: #928374;
+    --color-prettylights-syntax-constant: #d3869b;
+    --color-prettylights-syntax-entity: #83a598;
+    --color-prettylights-syntax-storage-modifier-import: #ebdbb2;
+    --color-prettylights-syntax-entity-tag: #8ec07c;
+    --color-prettylights-syntax-keyword: #fb4934;
+    --color-prettylights-syntax-string: #b8bb26;
+    --color-prettylights-syntax-variable: #fabd2f;
+    --color-prettylights-syntax-brackethighlighter-unmatched: #fb4934;
+    --color-prettylights-syntax-invalid-illegal-text: #1d2021;
+    --color-prettylights-syntax-invalid-illegal-bg: #fb4934;
+    --color-prettylights-syntax-carriage-return-text: #1d2021;
+    --color-prettylights-syntax-carriage-return-bg: #d65d0e;
+    --color-prettylights-syntax-string-regexp: #b8bb26;
+    --color-prettylights-syntax-markup-list: #fabd2f;
+    --color-prettylights-syntax-markup-heading: #83a598;
+    --color-prettylights-syntax-markup-italic: #ebdbb2;
+    --color-prettylights-syntax-markup-bold: #ebdbb2;
+    --color-prettylights-syntax-markup-deleted-text: #fb4934;
+    --color-prettylights-syntax-markup-deleted-bg: #3c1f1e;
+    --color-prettylights-syntax-markup-inserted-text: #b8bb26;
+    --color-prettylights-syntax-markup-inserted-bg: #32361a;
+    --color-prettylights-syntax-markup-changed-text: #fabd2f;
+    --color-prettylights-syntax-markup-changed-bg: #3c3836;
+    --color-prettylights-syntax-markup-ignored-text: #504945;
+    --color-prettylights-syntax-markup-ignored-bg: #ebdbb2;
+    --color-prettylights-syntax-meta-diff-range: #d3869b;
+    --color-prettylights-syntax-brackethighlighter-angle: #a89984;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #504945;
+    --color-prettylights-syntax-constant-other-reference-link: #83a598;
+
+    --color-fg-default: #ebdbb2;
+    --color-fg-muted: #a89984;
+    --color-fg-subtle: #928374;
+    --color-canvas-default: #1d2021;
+    --color-canvas-overlay: #282828;
+    --color-canvas-inset: #141617;
+    --color-canvas-subtle: #282828;
+    --color-border-default: #3c3836;
+    --color-border-muted: #32302f;
+    --color-border-subtle: rgba(235, 219, 178, 0.1);
+    --color-shadow-small: 0 1px 0 rgba(0, 0, 0, 0.3);
+    --color-shadow-medium: 0 3px 6px rgba(0, 0, 0, 0.4);
+    --color-shadow-large: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --color-shadow-extra-large: 0 12px 48px rgba(0, 0, 0, 0.6);
+    --color-neutral-muted: rgba(168, 153, 132, 0.2);
+    --color-accent-fg: #d65d0e;
+    --color-accent-emphasis: #d65d0e;
+    --color-accent-muted: rgba(214, 93, 14, 0.2);
+    --color-accent-subtle: rgba(214, 93, 14, 0.1);
+    --color-success-fg: #b8bb26;
+    --color-attention-fg: #fabd2f;
+    --color-attention-muted: rgba(250, 189, 47, 0.2);
+    --color-attention-subtle: rgba(250, 189, 47, 0.1);
+    --color-danger-fg: #fb4934;
+    --color-danger-muted: rgba(251, 73, 52, 0.2);
+    --color-danger-subtle: rgba(251, 73, 52, 0.1);
+    --color-primer-shadow-inset: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+    --color-scale-gray-7: #282828;
+    --color-scale-blue-8: #1d2021;
+}
+
+main {
+    background-color: #1d2021;
+    border: none;
+    border-top: 1px solid #3c3836;
+}

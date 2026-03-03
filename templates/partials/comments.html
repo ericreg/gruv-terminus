@@ -1,3 +1,28 @@
-{#- To add a comment section to your pages, please create a file named -#}
-{#- `templates/partials/comments.html` in your Zola project directory and -#}
-{#- insert the desired HTML there. -#}
+{%- set giscus = config.extra.giscus -%}
+{%- set global_enabled = giscus.enabled | default(value=false) -%}
+{%- set comments_enabled = page.extra.comments | default(value=global_enabled) -%}
+{%- if comments_enabled and giscus.repo -%}
+{%- set theme_value = giscus.theme | default(value="dark") -%}
+{%- if theme_value is containing(".css") and config.mode != "serve" -%}
+    {%- set theme_value = get_url(path=theme_value) -%}
+{%- elif theme_value is containing(".css") -%}
+    {%- set theme_value = "gruvbox_dark" -%}
+{%- endif -%}
+<section class="comments">
+    <script src="https://giscus.app/client.js"
+        data-repo="{{ giscus.repo }}"
+        data-repo-id="{{ giscus.repo_id }}"
+        data-category="{{ giscus.category }}"
+        data-category-id="{{ giscus.category_id }}"
+        data-mapping="{{ giscus.mapping | default(value="pathname") }}"
+        data-strict="{{ giscus.strict | default(value="0") }}"
+        data-reactions-enabled="{{ giscus.reactions_enabled | default(value="1") }}"
+        data-emit-metadata="{{ giscus.emit_metadata | default(value="0") }}"
+        data-input-position="{{ giscus.input_position | default(value="bottom") }}"
+        data-theme="{{ theme_value }}"
+        data-lang="{{ giscus.lang | default(value="en") }}"
+        crossorigin="anonymous"
+        async>
+    </script>
+</section>
+{%- endif -%}

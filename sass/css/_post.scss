@@ -209,6 +209,17 @@ h6 {
     }
 }
 
+.comments {
+    margin-top: 45px;
+    width: 100%;
+
+    .giscus,
+    .giscus-frame {
+        width: 100%;
+        border: none;
+    }
+}
+
 .post-navigation {
     @media print {
         display: none;

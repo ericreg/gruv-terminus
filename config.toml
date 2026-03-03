@@ -1,63 +1,39 @@
-# The URL the site will be built for
 base_url = "https://ericregina.com"
-
-# The site title and description; used in feeds by default.
 title = "Gruv Terminus"
 description = "Demo website for the Gruv Terminus theme for Zola"
-
-# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-
-# When set to "true", a feed is automatically generated.
 generate_feeds = true
-
-# The default author for pages
 author = "Eric Regina"
 
-# The taxonomies to be rendered for the site and their configuration of the default languages
-# Example:
-#     taxonomies = [
-#       {name = "tags", feed = true}, # each tag will have its own feed
-#       {name = "tags"}, # you can have taxonomies with the same name in multiple languages
-#       {name = "categories", paginate_by = 5},  # 5 items per page for a term
-#       {name = "authors"}, # Basic definition: no feed or pagination
-#     ]
-#
 taxonomies = [
     { name = "tags", feed = true },
     { name = "categories", feed = true, paginate_by = 5 },
 ]
 
-# Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
-
-# The theme to use for code highlighting.
-# See below for list of allowed values.
 highlight_theme = "gruvbox-dark"
-
-# When set to "true", emoji aliases translated to their corresponding
-# Unicode emoji equivalent in the rendered Markdown files. (e.g.: :smile: => 😄)
 render_emoji = true
-
-# Whether footnotes are rendered in the GitHub-style (at the bottom, with back references) or plain (in the place, where they are defined)
 bottom_footnotes = true
-
-# When set to "true", support for GitHub-style alerts, a.k.a. callouts or admonitions, is enabled in the Markdown parser.
 github_alerts = true
 
 [extra]
+# Close the responsive nav menu when the viewport is resized to desktop width.
 close_responsive_menu_on_resize = true
+# Show a copy-to-clipboard button on code blocks.
 copy_button = true
+# Emoji used as the site favicon. Set favicon = "path/to/image.png" to use an image instead.
 favicon_emoji = "👨‍💻"
+# Enable KaTeX math rendering. Can also be set per-page in [extra].
 katex = true
+# Page layout: "left", "center", or "full-width".
 layout = "center"
+# Show the default site author on every post. Set to true or override per-page with authors = [].
 show_default_author = false
 
+# Navigation links shown in the header. Use new_tab = true for external links.
 main_menu = [
     { name = "blog", url = "blog", trailing_slash = true },
     { name = "archive", url = "archive", trailing_slash = true },
@@ -66,19 +42,55 @@ main_menu = [
     { name = "github", url = "https://github.com/ericreg/gruv-terminus", new_tab = true },
 ]
 
+# Social icons shown in the footer. Supported names: see static/images/social_icons/.
 socials = [
     { name = "email", url = "mailto:hello@example.com" },
     { name = "github", url = "https://github.com/ericreg" },
     { name = "linkedin", url = "https://www.linkedin.com/in/ericregina" },
 ]
 
+# Giscus comments (https://giscus.app)
+# Requires GitHub Discussions enabled on the repo and the giscus app installed.
+# Generate your values at https://giscus.app.
+# Disable comments on a specific page with [extra] comments = false in frontmatter.
+[extra.giscus]
+enabled = true
+# GitHub repo in "owner/name" format.
+repo = "ericreg/gruv-terminus"
+# Repo ID from giscus.app.
+repo_id = "R_kgDOQn1CsQ"
+# Discussion category name.
+category = "General"
+# Category ID from giscus.app.
+category_id = "DIC_kwDOQn1Csc4C3j5v"
+# How posts map to discussions: "pathname", "url", "title", "og:title".
+mapping = "pathname"
+# Use strict title matching: "0" or "1".
+strict = "0"
+# Show reactions on the discussion: "0" or "1".
+reactions_enabled = "0"
+# Emit discussion metadata to the parent page: "0" or "1".
+emit_metadata = "0"
+# Comment box position: "top" or "bottom".
+input_position = "top"
+# A built-in giscus theme name (e.g. "gruvbox_dark") or a path to a hosted CSS file
+# relative to the static/ directory (e.g. "css/giscus-theme.css").
+theme = "css/giscus-theme.css"
+lang = "en"
+
+# Content Security Policy
+# Add extra CSP directives here. The template automatically handles
+# 'self', syntax highlighting, emoji favicons, and zola serve requirements.
 [extra.content_security_policy]
 enable = true
 allowed_domains = [
     { directive = "connect-src", domains = ["'self'", "cloudflareinsights.com"] },
-    { directive = "script-src", domains = ["'self'", "static.cloudflareinsights.com"] },
+    { directive = "script-src", domains = ["'self'", "static.cloudflareinsights.com", "giscus.app"] },
+    { directive = "style-src-elem", domains = ["'self'", "giscus.app"] },
+    { directive = "frame-src", domains = ["giscus.app"] },
 ]
 
+# Widths (px) used to generate responsive image srcsets via the responsive_image shortcode.
 [extra.responsive_images]
 widths = [640, 784, 1280, 1920, 2560]
 fallback_width = 1280

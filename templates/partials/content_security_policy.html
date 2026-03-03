@@ -5,8 +5,14 @@
     {#- Allow WebSocket protocol if served via `zola serve` -#}
     {%- if config.mode == "serve" -%}
         {%- set connect_src = load_data(literal=`{"directive": "connect-src", "domains": ["'self'", "ws:"]}`, format="json") -%}
-        {%- set script_src_elem = load_data(literal=`{"directive": "script-src-elem", "domains": ["'self'", "'unsafe-inline'"]}`, format="json") -%}
-        {%- set allowed_domains = allowed_domains | concat(with=connect_src) | concat(with=script_src_elem) -%}
+        {%- if config.extra.giscus.enabled -%}
+            {%- set script_src_elem = load_data(literal=`{"directive": "script-src-elem", "domains": ["'self'", "'unsafe-inline'", "giscus.app"]}`, format="json") -%}
+            {%- set style_src_elem = load_data(literal=`{"directive": "style-src-elem", "domains": ["'self'", "giscus.app"]}`, format="json") -%}
+            {%- set allowed_domains = allowed_domains | concat(with=connect_src) | concat(with=script_src_elem) | concat(with=style_src_elem) -%}
+        {%- else -%}
+            {%- set script_src_elem = load_data(literal=`{"directive": "script-src-elem", "domains": ["'self'", "'unsafe-inline'"]}`, format="json") -%}
+            {%- set allowed_domains = allowed_domains | concat(with=connect_src) | concat(with=script_src_elem) -%}
+        {%- endif -%}
     {%- endif -%}
 
     {#- Allow `data:` URL scheme if emoji-based favicon is used -#}
