@@ -3,7 +3,7 @@ $max-layout-width: 864px;
 :root {
     --font-size: 1rem;
     --line-height: 1.54em;
-    --radius: 0;
+    --radius: 6px;
 
     @media (max-width: 684px) {
         --font-size: 0.95rem;
@@ -408,20 +408,35 @@ blockquote {
 }
 
 table {
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid color-mix(in srgb, var(--text-color) 25%, transparent);
+    border-radius: var(--radius);
+    overflow: hidden;
 
     th,
     td {
-        border: 2px solid var(--text-color);
+        border-top: none;
+        border-left: none;
+        border-right: 1px solid color-mix(in srgb, var(--text-color) 25%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, var(--text-color) 25%, transparent);
         padding: 10px;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    tr:last-child td {
+        border-bottom: none;
     }
 
     th {
-        border-style: solid;
         color: var(--text-color);
         text-align: left;
         text-transform: uppercase;
         letter-spacing: 0.04em;
+        border-bottom: 1px solid color-mix(in srgb, var(--text-color) 25%, transparent);
     }
 }
 

@@ -18,14 +18,18 @@ $line-number-color: color-mix(in srgb, var(--text-color) 53%, transparent);
 
 .copy-button {
     position: absolute;
-    top: $header-padding-vertical;
-    right: 10px;
-    padding: 3px 8px;
-    width: 4.5rem;
+    // Center vertically within the header row (2 * padding + line-height)
+    top: calc(($header-padding-vertical * 2 + 21px - 1.6rem) / 2);
+    right: 12px;
+    padding: 3px;
+    width: 1.6rem;
+    height: 1.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid color-mix(in srgb, var(--accent-color) 15%, transparent);
-    font-size: calc(var(--font-size) * 0.8);
-    font-weight: normal;
-    line-height: 1em;
+    border-radius: 4px;
+    line-height: 1;
 
     @media print {
         display: none;
@@ -37,6 +41,7 @@ pre[data-lang] {
     position: relative;
     padding: 0;
     overflow-y: hidden;
+    border-radius: var(--radius);
 
     &::before {
         content: attr(data-lang);
@@ -71,7 +76,7 @@ pre[data-lang] {
 
         &:has(.copy-button)::before {
             @media screen {
-                right: calc(4.5rem + 10px);
+                right: calc(1.6rem + 16px);
             }
         }
 
