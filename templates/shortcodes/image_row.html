@@ -1,0 +1,23 @@
+{%- set path1 = page.colocated_path ~ src1 -%}
+{%- set path2 = page.colocated_path ~ src2 -%}
+{%- set fallback_width = config.extra.responsive_images.fallback_width -%}
+{%- set img1 = resize_image(path=path1, width=fallback_width, height=fallback_width, op="fit") -%}
+{%- set img2 = resize_image(path=path2, width=fallback_width, height=fallback_width, op="fit") -%}
+{%- set url1 = get_url(path=path1) -%}
+{%- set url2 = get_url(path=path2) -%}
+{%- set caption = caption | default(value="") -%}
+{%- set caption1 = caption1 | default(value="") -%}
+{%- set caption2 = caption2 | default(value="") -%}
+
+{%- if caption %}<figure>{%- endif %}
+<div class="image-row">
+  <figure>
+    <img src="{{ img1.url | safe }}" alt="{{ alt1 }}" data-lightbox="{{ url1 | safe }}" loading="lazy">
+    {%- if caption1 %}<figcaption><p>{{ caption1 | markdown(inline=true) | safe }}</p></figcaption>{%- endif %}
+  </figure>
+  <figure>
+    <img src="{{ img2.url | safe }}" alt="{{ alt2 }}" data-lightbox="{{ url2 | safe }}" loading="lazy">
+    {%- if caption2 %}<figcaption><p>{{ caption2 | markdown(inline=true) | safe }}</p></figcaption>{%- endif %}
+  </figure>
+</div>
+{%- if caption %}<figcaption><p>{{ caption | markdown(inline=true) | safe }}</p></figcaption></figure>{%- endif %}

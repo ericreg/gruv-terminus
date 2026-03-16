@@ -42,3 +42,18 @@ figure.mastodon-post {
         overflow-x: auto;
     }
 }
+
+.image-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 25px 0;
+
+    figure {
+        flex: 1;
+        min-width: 0;
+        margin: 0;
+        width: fit-content;
+    }
+}

@@ -1,0 +1,24 @@
+{%- set source_path = page.colocated_path ~ src -%}
+{%- set alt_text = alt -%}
+{%- set caption = caption | default(value="") -%}
+{%- set lazy_load = lazy | default(value=true) -%}
+{%- set image_url = get_url(path=source_path) -%}
+
+{%- if caption -%}
+<figure>
+{% endif -%}
+
+<img src="{{ image_url | safe }}" alt="{{ alt_text }}"
+     data-lightbox="{{ image_url | safe }}"
+     {%- if lazy_load %}
+     loading="lazy"
+     {%- else %}
+     fetchpriority="high"
+     {%- endif -%}>
+
+{%- if caption %}
+    <figcaption>
+        <p>{{ caption | markdown(inline=true) | safe }}</p>
+    </figcaption>
+</figure>
+{%- endif %}

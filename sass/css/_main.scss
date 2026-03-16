@@ -262,17 +262,14 @@ figure {
 
     &:not(.mastodon-post) {
         figcaption {
-            background: var(--accent-color);
-            color: var(--background-color);
+            color: color-mix(in srgb, var(--text-color) 60%, transparent);
             text-align: center;
-            font-size: var(--font-size);
+            font-size: calc(var(--font-size) * 0.85);
             font-weight: normal;
-            margin-top: 5px;
-            padding: 5px 8px;
-            border-radius: 0 0 var(--radius) var(--radius);
+            margin-top: 6px;
 
             a {
-                color: var(--background-color);
+                color: color-mix(in srgb, var(--text-color) 60%, transparent);
             }
 
             p:first-child {
@@ -493,5 +490,29 @@ details {
         &:last-child {
             margin-bottom: 15px;
         }
+    }
+}
+
+#lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+
+    &.is-open {
+        display: flex;
+    }
+
+    #lightbox-img {
+        max-width: 90vw;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: var(--radius);
+        cursor: default;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
     }
 }

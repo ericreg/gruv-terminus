@@ -24,6 +24,7 @@
 <figure>
 {% endif -%}
 
+{%- set original_url = get_url(path=source_image_path) -%}
 <img src="{{ fallback_image.url | safe }}" alt="{{ alt_text }}"
      width="{{ fallback_image.width }}" height="{{ fallback_image.width / (metadata.width / metadata.height) | round(method="floor") }}"
      {% if config.extra.layout == "full-width" -%}
@@ -32,6 +33,7 @@
      sizes="(min-width: 920px) 784px, (min-width: 700px) calc(82vw + 46px), calc(100vw - 40px)" {# Browser hint: main content width will max out at 784px in practice #}
      {%- endif %}
      srcset="{{ image_candidates | join(sep=",\n             ") | safe }}"
+     data-lightbox="{{ original_url | safe }}"
      {%- if lazy_load %}
      loading="lazy"
      {%- else %}
